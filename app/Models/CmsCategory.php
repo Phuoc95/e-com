@@ -24,9 +24,12 @@ class CmsCategory extends Model
         foreach ($result as $value) {
             $list[$value['id']] = $value['title'];
             if ($this->checkChild($value['id']) > 0) {
+                // dump(($this->checkChild($value['id'])));
+                // dd($value['title']);
                 $this->listCateExceptRoot($value['id'], $list);
             }
         }
+        // dd($list);
         return $list;
     }
 
@@ -43,7 +46,7 @@ class CmsCategory extends Model
 
     }
 
-    public function checkChild($id)
+    public function checkChild($id) // Check if exist sub cate
     {
         return $this->where('parent', $id)->count();
     }

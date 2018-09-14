@@ -110,4 +110,5 @@ return [
         'filter_clear'       => 'Show all',
         'filter_placeholder' => 'Filter',
     ],
+    'topic'                 => 'Chủ đề',
 ];

@@ -24,7 +24,7 @@ class CmsCategoryController extends Controller
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('Chủ đề');
+            $content->header(trans('admin.topic'));
             // $content->description('description');
 
             $content->body($this->grid());
@@ -103,6 +103,7 @@ class CmsCategoryController extends Controller
             $form->display('id', 'ID');
             $form->text('title', 'Tên')->rules('required', ['required' => 'Bạn chưa nhập tên']);
             $arrCate = (new CmsCategory)->listCate();
+            // dd($arrCate);
             $arrCate = ['0' => '== Chủ đề gốc =='] + $arrCate;
             $form->select('parent', 'Chủ đề cha')->options($arrCate);
             $form->image('image', 'Hình ảnh')->uniqueName()->move('cms_category')->removable();
