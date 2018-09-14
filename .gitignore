@@ -4,7 +4,6 @@ composer.lock
 /vendor
 /.idea
 /.vagrant
-/database/migrations
 Homestead.json
 Homestead.yaml
 npm-debug.log
